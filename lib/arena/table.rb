@@ -2,10 +2,9 @@ require_relative 'arena.rb'
 
 module Game
   class Table < Game::Arena
-    def initialize
-      @width = 5
-      @height = 5
-    end
+
+    WIDTH = 5
+    HEIGHT = 5
 
     def invalid_move?(x,y)
       out_of_bound?(x,y) || negative?(x,y)
@@ -13,7 +12,7 @@ module Game
 
     private
     def out_of_bound?(x,y)
-      x >= width || y >= height
+      x >= Game::Table::WIDTH || y >= Game::Table::HEIGHT
     end
 
     def negative?(x,y)
