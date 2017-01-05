@@ -3,6 +3,10 @@ require_relative 'action.rb'
 module Game
   class Place < Game::Action
 
+    def act(robot, command)
+      super(robot, command) { robot.enter_arena }
+    end
+
     private
     def execute_command(x, y, direction)
       if command =~ command_pattern

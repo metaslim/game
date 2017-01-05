@@ -24,13 +24,13 @@ class Main
     robot.add_action(Game::Report.new)
   end
 
-  def robot_play_in_arena
+  def robot_select_arena
     robot.add_arena(board)
   end
 
   def play
     setup_robot_action
-    robot_play_in_arena
+    robot_select_arena
     puts "ENTER COMMAND"
     command = gets
     until command.chomp == 'QUIT'

@@ -5,6 +5,7 @@ module Game
     def act(robot, command)
       @command = command
       if valid_command?
+        yield(robot) if block_given?
         x, y, direction = execute_command(robot.x, robot.y, robot.direction)
         robot.move_and_face_to(x, y, direction)
       end
