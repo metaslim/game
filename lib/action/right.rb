@@ -3,19 +3,17 @@ require_relative 'action.rb'
 module Game
   class Right < Game::Action
 
+    RIGHT_DIRECTION_OF = {
+      "WEST" => "NORTH",
+      "EAST" => "SOUTH",
+      "NORTH" => "EAST",
+      "SOUTH" => "WEST"
+    }
+
+
     private
     def execute_command(x, y, direction)
-      direction = case direction
-      when "WEST"
-        "NORTH"
-      when "EAST"
-        "SOUTH"
-      when "NORTH"
-        "EAST"
-      when "SOUTH"
-        "WEST"
-      end
-      return x, y, direction
+      return x, y, Game::Right::RIGHT_DIRECTION_OF[direction]
     end
   end
 end
