@@ -13,7 +13,7 @@ class TestReport< Minitest::Test
   def test_act
     robot = Game::Robot.new
     robot.stub :invalid_move?, (false) do
-      report.act(robot, "REPORT")
+      assert_output(/x=0\ty=0\tdirection=EAST/) { report.act(robot, "REPORT") }
       assert_equal 0, robot.x
       assert_equal 0, robot.y
       assert_equal "EAST", robot.direction
