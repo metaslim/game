@@ -1,5 +1,4 @@
 require "minitest/autorun"
-require 'minitest/mock'
 require_relative '../../lib/robot/robot.rb'
 
 class TestRobot < Minitest::Test
