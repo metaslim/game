@@ -2,6 +2,8 @@ require_relative 'action.rb'
 
 module Game
   class Right < Game::Action
+
+    private
     def execute_command(x, y, direction)
       direction = case direction
       when "WEST"
