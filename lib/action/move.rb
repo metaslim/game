@@ -4,6 +4,7 @@ module Game
   class Move < Game::Action
     SPEED = 1
 
+    private
     def execute_command(x, y, direction)
       case direction
       when "WEST"
