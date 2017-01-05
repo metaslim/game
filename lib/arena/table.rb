@@ -12,7 +12,6 @@ module Game
     end
 
     private
-
     def out_of_bound?(x,y)
       x >= width || y >= height
     end
