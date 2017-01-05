@@ -24,7 +24,7 @@ class TestRobot < Minitest::Test
   def test_add_arena
     mock_arena = Object.new
     robot.add_arena(mock_arena)
-    assert_equal mock_arena.object_id, robot.arena.object_id
+    assert_equal mock_arena, robot.arena
   end
 
   def test_move_and_face_to
