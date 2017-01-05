@@ -1,0 +1,5 @@
+require_relative 'place.rb'
+require_relative 'move.rb'
+require_relative 'left.rb'
+require_relative 'right.rb'
+require_relative 'report.rb'
