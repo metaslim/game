@@ -28,16 +28,20 @@ module Game
     end
 
     def move_and_face_to(x, y, direction)
-      @x, @y, @direction = x, y, direction unless invalid_move?(x,y) || not_in_arena?
+      @x, @y, @direction = x, y, direction if allowed_to_move?(x,y)
     end
 
     private
+    def allowed_to_move?(x,y)
+      !invalid_move?(x,y) and in_arena?
+    end
+
     def invalid_move?(x,y)
       arena.invalid_move?(x,y)
     end
 
-    def not_in_arena?
-      !in_arena
+    def in_arena?
+      in_arena
     end
   end
 end

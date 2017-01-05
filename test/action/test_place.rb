@@ -10,13 +10,24 @@ class TestPlace < Minitest::Test
   end
 
 
-  def test_act
+  def test_act_when_allowed
     robot = Game::Robot.new
-    robot.stub :invalid_move?, (false) do
+    robot.stub :allowed_to_move?, (true) do
       place.act(robot, "PLACE 1,3,WEST")
       assert_equal 1, robot.x
       assert_equal 3, robot.y
       assert_equal "WEST", robot.direction
+    end
+  end
+
+
+  def test_act_when_disallowed
+    robot = Game::Robot.new
+    robot.stub :allowed_to_move?, (false) do
+      place.act(robot, "PLACE 1,3,WEST")
+      assert_equal 0, robot.x
+      assert_equal 0, robot.y
+      assert_equal "EAST", robot.direction
     end
   end
 end

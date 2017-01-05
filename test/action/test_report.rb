@@ -10,9 +10,19 @@ class TestReport< Minitest::Test
   end
 
 
-  def test_act
+  def test_act_when_allowed
     robot = Game::Robot.new
-    robot.stub :invalid_move?, (false) do
+    robot.stub :allowed_to_move?, (true) do
+      assert_output(/x=0\ty=0\tdirection=EAST/) { report.act(robot, "REPORT") }
+      assert_equal 0, robot.x
+      assert_equal 0, robot.y
+      assert_equal "EAST", robot.direction
+    end
+  end
+
+  def test_act_when_allowed
+    robot = Game::Robot.new
+    robot.stub :allowed_to_move?, (false) do
       assert_output(/x=0\ty=0\tdirection=EAST/) { report.act(robot, "REPORT") }
       assert_equal 0, robot.x
       assert_equal 0, robot.y

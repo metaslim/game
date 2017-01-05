@@ -11,6 +11,7 @@ class TestRobot < Minitest::Test
   def test_robot_created
     assert_equal 0, robot.x
     assert_equal 0, robot.y
+    assert_equal false, robot.in_arena
     assert_equal "EAST", robot.direction
   end
 
@@ -26,12 +27,21 @@ class TestRobot < Minitest::Test
     assert_equal mock_arena, robot.arena
   end
 
-  def test_move_and_face_to
-    robot.stub :invalid_move?, (false) do
+  def test_move_and_face_to_when_allowed
+    robot.stub :allowed_to_move?, (true) do
       robot.move_and_face_to(3, 4, "WEST")
       assert_equal 3, robot.x
       assert_equal 4, robot.y
       assert_equal "WEST", robot.direction
+    end
+  end
+
+  def test_move_and_face_to_when_disallowed
+    robot.stub :allowed_to_move?, (false) do
+      robot.move_and_face_to(3, 4, "WEST")
+      assert_equal 0, robot.x
+      assert_equal 0, robot.y
+      assert_equal "EAST", robot.direction
     end
   end
 
