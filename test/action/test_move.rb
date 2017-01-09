@@ -1,6 +1,6 @@
 require "minitest/autorun"
 require_relative '../../lib/action/move.rb'
-require_relative '../../lib/robot/robot.rb'
+require_relative './robot_maker.rb'
 
 class TestMove < Minitest::Test
   attr_reader :move
@@ -11,22 +11,20 @@ class TestMove < Minitest::Test
 
 
   def test_act_when_allowed
-    robot = Game::Robot.new
-    robot.stub :allowed_to_move?, (true) do
-      move.act(robot, "MOVE")
-      assert_equal 1, robot.x
-      assert_equal 0, robot.y
-      assert_equal "EAST", robot.direction
-    end
+    robot = RobotMaker::create(1, 0, "EAST")
+
+    move.act(robot, "MOVE")
+    assert_equal 1, robot.x
+    assert_equal 0, robot.y
+    assert_equal "EAST", robot.direction
   end
 
    def test_act_when_disallowed
-    robot = Game::Robot.new
-    robot.stub :allowed_to_move?, (false) do
-      move.act(robot, "MOVE")
-      assert_equal 0, robot.x
-      assert_equal 0, robot.y
-      assert_equal "EAST", robot.direction
-    end
+    robot = RobotMaker::create(0, 0, "EAST", "false")
+
+    move.act(robot, "MOVE")
+    assert_equal 0, robot.x
+    assert_equal 0, robot.y
+    assert_equal "EAST", robot.direction
   end
 end
