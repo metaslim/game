@@ -9,16 +9,17 @@ Ruby 2.3
 
 ## Tests
 
-Using MiniTest (https://github.com/seattlerb/minitest). All tests are placed on test/
+Using [MiniTest](https://github.com/seattlerb/minitest). All tests are placed on test/
 
 ## How to run
 
+```shell
 ruby main.ruby
+```
 
 ## Commands to interact with the robot
 
-* PLACE will put the toy robot on the table in position X,Y and facing NORTH, SOUTH, EAST or WEST.
-* The first valid command to the robot is a PLACE command, after that, any sequence of commands may be issued, in any order, including another PLACE ommand. The application should discard all commands in the sequence until a valid PLACE command has been executed.
+* PLACE will put the toy robot on the table in position X,Y and facing NORTH, SOUTH, EAST or WEST. The first valid command to the robot is a PLACE command, after that, any sequence of commands may be issued, in any order, including another PLACE ommand. The application should discard all commands in the sequence until a valid PLACE command has been executed.
 * MOVE will move the toy robot one unit forward in the direc8on it is currently facing.
 * LEFT and RIGHT will rotate the robot 90 degrees in the specified direction without changing the posi8on of the robot.
 * REPORT will announce the X,Y and F of the robot. This can be in any form, but standard output is sufficient.
