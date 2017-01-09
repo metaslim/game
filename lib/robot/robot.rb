@@ -22,14 +22,14 @@ module Game
     end
 
     def execute(command)
-      new_position = act(command)
-      move_and_face_to(new_position)
+      actions.each do |action|
+        new_position = act(action, command)
+        move_and_face_to(*new_position) unless new_position.nil?
+      end
     end
 
-    def act(command)
-      actions.each do |action|
-        x, y, direction = action.act(self, command)
-      end
+    def act(action, command)
+      action.act(self, command)
     end
 
     def move_and_face_to(x, y, direction)

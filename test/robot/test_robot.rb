@@ -48,8 +48,7 @@ class TestRobot < Minitest::Test
   def test_act
     jump = MiniTest::Mock.new
     jump.expect(:act, [0,0,"EAST"], [robot, "JUMP"])
-    robot.add_action(jump)
-    robot.act "JUMP"
+    robot.act(jump, "JUMP")
     assert jump.verify
   end
 end
