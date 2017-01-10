@@ -11,6 +11,10 @@ Ruby 2.3
 
 Using [MiniTest](https://github.com/seattlerb/minitest). All tests are placed on test/
 
+```shell
+rake test
+```
+
 ## How to run
 
 ```shell
