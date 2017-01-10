@@ -19,7 +19,7 @@ class TestMove < Minitest::Test
     assert_equal "EAST", robot.direction
   end
 
-   def test_act_when_disallowed
+  def test_act_when_disallowed
     robot = RobotMaker::create(0, 0, "EAST", "false")
 
     move.act(robot, "MOVE")

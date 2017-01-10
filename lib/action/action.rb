@@ -6,7 +6,7 @@ module Game
       @command = command
       if valid_command?
         yield if block_given?
-        x, y, direction = execute_command(robot.x, robot.y, robot.direction)
+        execute_command(robot.x, robot.y, robot.direction)
       end
     end
 
