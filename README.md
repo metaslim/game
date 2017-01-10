@@ -18,7 +18,7 @@ rake test
 ## How to run
 
 ```shell
-ruby main.ruby
+ruby main.rb
 ```
 
 ## Commands to interact with the robot
