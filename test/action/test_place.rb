@@ -10,22 +10,12 @@ class TestPlace < Minitest::Test
   end
 
 
-  def test_act_when_allowed
+  def test_act
     robot = RobotMaker::create(1, 3, "WEST")
 
-    place.act(robot, "PLACE 1,3,WEST")
-    assert_equal 1, robot.x
-    assert_equal 3, robot.y
-    assert_equal "WEST", robot.direction
-  end
-
-
-  def test_act_when_disallowed
-    robot = RobotMaker::create(0, 0, "EAST", false)
-
-    place.act(robot, "PLACE 1,3,WEST")
-    assert_equal 0, robot.x
-    assert_equal 0, robot.y
-    assert_equal "EAST", robot.direction
+    x, y, direction = place.act(robot, "PLACE 1,3,WEST")
+    assert_equal 1, x
+    assert_equal 3, y
+    assert_equal "WEST", direction
   end
 end

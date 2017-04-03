@@ -22,6 +22,7 @@ class Main
     robot.add_action(Game::Right.new)
     robot.add_action(Game::Left.new)
     robot.add_action(Game::Report.new)
+    robot.add_action(Game::Reverse.new)
   end
 
   def robot_select_arena

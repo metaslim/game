@@ -10,21 +10,12 @@ class TestRight < Minitest::Test
   end
 
 
-  def test_act_when_allowed
+  def test_act
     robot = RobotMaker::create(0, 0, "SOUTH")
 
     right.act(robot, "RIGHT")
     assert_equal 0, robot.x
     assert_equal 0, robot.y
     assert_equal "SOUTH", robot.direction
-  end
-
-  def test_act_when_disallowed
-    robot = RobotMaker::create(0, 0, "EAST", false)
-
-    right.act(robot, "RIGHT")
-    assert_equal 0, robot.x
-    assert_equal 0, robot.y
-    assert_equal "EAST", robot.direction
   end
 end

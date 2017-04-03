@@ -10,6 +10,3 @@ PLATFORMS
 DEPENDENCIES
   minitest
   rake
-
-BUNDLED WITH
-   1.13.6
