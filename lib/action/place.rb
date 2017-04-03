@@ -9,9 +9,7 @@ module Game
 
     private
     def execute_command(x, y, direction)
-      if command =~ command_pattern
-        return $1.to_i, $2.to_i, $3
-      end
+      return x, y, direction
     end
 
     def command_pattern
