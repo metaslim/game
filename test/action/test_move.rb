@@ -3,14 +3,8 @@ require_relative '../../lib/action/move.rb'
 require_relative './robot_maker.rb'
 
 class TestMove < Minitest::Test
-  attr_reader :move
-
-  def setup
-    @move = Game::Move.new
-  end
-
-
-  def test_act
+  def test_act_move
+    move = Game::Move.new
     robot = RobotMaker::create(1, 0, "EAST")
 
     x, y, direction = move.act(robot, "MOVE")

@@ -3,19 +3,13 @@ require_relative '../../lib/action/right.rb'
 require_relative './robot_maker.rb'
 
 class TestRight < Minitest::Test
-  attr_reader :right
+  def test_act_right
+    right = Game::Right.new
+    robot = RobotMaker::create(0, 0, "NORTH")
 
-  def setup
-    @right = Game::Right.new
-  end
-
-
-  def test_act
-    robot = RobotMaker::create(0, 0, "SOUTH")
-
-    right.act(robot, "RIGHT")
-    assert_equal 0, robot.x
-    assert_equal 0, robot.y
-    assert_equal "SOUTH", robot.direction
+    x, y, direction = right.act(robot, "RIGHT")
+    assert_equal 0, x
+    assert_equal 0, y
+    assert_equal "EAST", direction
   end
 end
