@@ -1,4 +1,5 @@
 require_relative 'lib/arena/table.rb'
+require_relative 'lib/arena/circle.rb'
 require_relative 'lib/robot/robot.rb'
 require_relative 'lib/action/action_pack.rb'
 
@@ -12,7 +13,7 @@ class Main
   attr_reader :board, :robot
 
   def initialize
-    @board = Game::Table.new
+    @board = Game::Circle.new
     @robot = Game::Robot.new
   end
 
