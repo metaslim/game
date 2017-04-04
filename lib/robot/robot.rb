@@ -9,12 +9,12 @@ module Game
       @direction = 'EAST'
     end
 
-    def add_action(action)
-      @actions << action
+    def add_action(actionable)
+      @actions << actionable
     end
 
-    def add_arena(arena)
-      @arena = arena
+    def add_arena(arenable)
+      @arena = arenable
     end
 
     def enter_arena

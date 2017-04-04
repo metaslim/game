@@ -1,5 +1,5 @@
 module Game
-  class Action
+  class Actionable
     attr_reader :command
 
     def act(robot, command)

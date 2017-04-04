@@ -1,7 +1,7 @@
-require_relative 'action.rb'
+require_relative 'actionable.rb'
 
 module Game
-  class Move < Game::Action
+  class Move < Game::Actionable
     SPEED = 1
 
     MOVE_FROM = {

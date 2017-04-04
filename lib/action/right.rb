@@ -1,7 +1,7 @@
-require_relative 'action.rb'
+require_relative 'actionable.rb'
 
 module Game
-  class Right < Game::Action
+  class Right < Game::Actionable
 
     RIGHT_DIRECTION_OF = {
       "WEST" => "NORTH",

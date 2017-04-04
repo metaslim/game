@@ -1,7 +1,7 @@
-require_relative 'action.rb'
+require_relative 'actionable.rb'
 
 module Game
-  class Place < Game::Action
+  class Place < Game::Actionable
 
     def act(robot, command)
       super(robot, command) { robot.enter_arena }

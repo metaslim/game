@@ -1,7 +1,7 @@
-require_relative 'arena.rb'
+require_relative 'arenable.rb'
 
 module Game
-  class Table < Game::Arena
+  class Table < Game::Arenable
 
     WIDTH = 5
     HEIGHT = 5

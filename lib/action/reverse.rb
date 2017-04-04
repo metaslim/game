@@ -1,7 +1,7 @@
-require_relative 'action.rb'
+require_relative 'actionable.rb'
 
 module Game
-  class Reverse < Game::Action
+  class Reverse < Game::Actionable
 
     REVERSE_DIRECTION_OF = {
       "WEST" => "EAST",

@@ -1,5 +1,5 @@
 module Game
-  class Arena
+  class Arenable
     def invalid_move?(x,y)
        raise NotImplementedError
     end
