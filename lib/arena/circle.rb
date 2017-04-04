@@ -5,11 +5,11 @@ module Game
 
     CENTER_X = 0
     CENTER_Y = 0
-    RADIUS = 5
+    RADIUS = 10
 
     def invalid_move?(x,y)
-      square_dist = (CENTER_X - x) ** 2 + (CENTER_Y - y) ** 2
-      square_dist > RADIUS ** 2
+      square_dist = (Game::Circle::CENTER_X - x) ** 2 + (Game::Circle::CENTER_Y - y) ** 2
+      square_dist >= Game::Circle::RADIUS ** 2
     end
 
   end
