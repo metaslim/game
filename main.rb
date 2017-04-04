@@ -29,29 +29,19 @@ class Main
     robot.add_arena(board)
   end
 
-  def play
-    setup_robot_action
-    robot_select_arena
+  def waiting_for_command
     puts "ENTER COMMAND"
     command = gets
     until command.chomp == 'QUIT'
       robot.execute command.chomp
       command = gets
     end
+  end
 
-    # robot.execute("PLACE 1,2,WEST")
-    # robot.execute("REPORT")
-    # robot.execute("MOVE")
-    # robot.execute("REPORT")
-    # robot.execute("RIGHT")
-    # robot.execute("REPORT")
-    # robot.execute("LEFT")
-    # robot.execute("REPORT")
-    # robot.execute("RIGHT")
-    # robot.execute("REPORT")
-    # robot.execute("LEFT")
-    # robot.execute("REPORT")
-
+  def play
+    setup_robot_action
+    robot_select_arena
+    waiting_for_command
   end
 end
 
