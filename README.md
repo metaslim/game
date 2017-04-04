@@ -3,6 +3,8 @@
 The application is a simulation of a toy robot moving on a square tabletop, of dimensions 5 units x 5 units. 
 This is just a small app (few hours work) that I developed in mini code kata to refresh my coding skills. I have been absent of fulltime coding for 4-5 years. It was quite fun.
 
+Updated for Ruby MeetUp presentation in Kuala Lumpur Malaysia on 4 April 2017, extending with reverse command and circle arena now
+
 ## Environment
 
 Ruby 2.3
