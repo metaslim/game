@@ -52,6 +52,10 @@ MOVE
 REPORT  
 Output: 3,3,NORTH  
 
+## TODO
+
+Use Rspec for test
+
 ## License
 
 (The MIT License)  
