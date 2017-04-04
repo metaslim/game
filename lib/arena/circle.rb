@@ -9,7 +9,7 @@ module Game
 
     def invalid_move?(x,y)
       square_dist = (Game::Circle::CENTER_X - x) ** 2 + (Game::Circle::CENTER_Y - y) ** 2
-      square_dist >= Game::Circle::RADIUS ** 2
+      square_dist > Game::Circle::RADIUS ** 2
     end
 
   end
