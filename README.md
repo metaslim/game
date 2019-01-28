@@ -1,4 +1,4 @@
-## Ruby Robot (almost behave like Cubetto from PrimoToys)
+## Ruby Robot
 
 The application is a simulation of a toy robot moving on a square tabletop, of dimensions 5 units x 5 units. 
 This is just a small app (few hours work) that I developed in mini code kata to refresh my coding skills. I have been absent of fulltime coding for 4-5 years. It was quite fun.
